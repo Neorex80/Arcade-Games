@@ -1,0 +1,47 @@
+/* About Section Styles */
+.about-section {
+  padding: 4rem 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 4rem;
+  animation: fadeIn 0.5s ease-out 0.6s backwards;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-description {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.technologies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.tech-category {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.tech-category:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}

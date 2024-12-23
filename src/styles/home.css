@@ -1,0 +1,143 @@
+/* Modern Homepage Styles */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #121212 0%, #1a1a2e 100%);
+}
+
+.home-header {
+  text-align: center;
+  margin: 4rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.game-title {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  background: linear-gradient(45deg, #4CAF50, #81C784);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.home-subtitle {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: #a0a0a0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.games-section {
+  margin: 4rem 0;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.game-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(76, 175, 80, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(76, 175, 80, 0.3);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(76, 175, 80, 0.2);
+}
+
+.game-card:hover::before {
+  opacity: 1;
+}
+
+.game-card canvas {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover canvas {
+  transform: scale(1.02);
+}
+
+.game-card h2 {
+  font-size: 1.5rem;
+  color: #4CAF50;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.game-card p {
+  color: #a0a0a0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .home-header {
+    margin: 2rem 0;
+    padding: 1.5rem;
+  }
+
+  .game-grid {
+    gap: 1rem;
+  }
+
+  .game-card {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  /* Improve touch interactions */
+  .game-card {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Optimize animations for mobile */
+  @media (prefers-reduced-motion: reduce) {
+    .game-card {
+      transition: none;
+    }
+    
+    .game-card:hover {
+      transform: none;
+    }
+  }
+}

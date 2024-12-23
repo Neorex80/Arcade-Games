@@ -1,0 +1,83 @@
+@import './home.css';
+@import './about.css';
+@import './social.css';
+@import './game.css';
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #121212;
+  color: white;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Game Card Styles */
+.game-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: fadeIn 0.5s ease-out calc(var(--i) * 0.1s) backwards;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.game-card canvas {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.game-card h2 {
+  color: #4CAF50;
+  margin-bottom: 0.5rem;
+}
+
+.game-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .game-title {
+    font-size: 2.5rem;
+  }
+
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}
